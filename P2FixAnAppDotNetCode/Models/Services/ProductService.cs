@@ -1,4 +1,5 @@
 ﻿using P2FixAnAppDotNetCode.Models.Repositories;
+using System.Collections.Generic;
 
 namespace P2FixAnAppDotNetCode.Models.Services
 {
@@ -19,10 +20,11 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// <summary>
         /// Get all product from the inventory
         /// </summary>
-        public Product[] GetAllProducts()
-        {
-            // TODO change the return type from array to List<T> and propagate the change
-            // thoughout the application
+        public List<Product> GetAllProducts() //Here, the brackets [] were removed and everything was refactored with the List syntax, including the Collections.Generic
+        { //This happened in several other places where "Go to Definition" and "Go to Implementation" hotkeys turned specially useful.
+
+
+
             return _productRepository.GetAllProducts();
         }
 
@@ -31,7 +33,15 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public Product GetProductById(int id)
         {
-            // TODO implement the method
+            foreach (Product product in GetAllProducts())
+            {
+                if (product.Id == id)
+                {
+                    return product;
+                }
+
+            };
+
             return null;
         }
 
@@ -40,8 +50,12 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public void UpdateProductQuantities(Cart cart)
         {
-            // TODO implement the method
-            // update product inventory by using _productRepository.UpdateProductStocks() method.
+            foreach (var productDecrementor in cart.Lines)
+            {
+
+                _productRepository.UpdateProductStocks(productDecrementor.Product.Id, productDecrementor.Quantity);
+
+            }
         }
     }
 }
