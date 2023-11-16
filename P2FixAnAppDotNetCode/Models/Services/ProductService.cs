@@ -20,11 +20,8 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// <summary>
         /// Get all product from the inventory
         /// </summary>
-        public List<Product> GetAllProducts() //Here, the brackets [] were removed and everything was refactored with the List syntax, including the Collections.Generic
-        { //This happened in several other places where "Go to Definition" and "Go to Implementation" hotkeys turned specially useful.
-
-
-
+        public List<Product> GetAllProducts() 
+        { 
             return _productRepository.GetAllProducts();
         }
 

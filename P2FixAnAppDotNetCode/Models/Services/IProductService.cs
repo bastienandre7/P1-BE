@@ -4,7 +4,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
 {
     public interface IProductService
     {
-        List<Product> GetAllProducts(); //Refactored array to list and added Collections.Generic
+        List<Product> GetAllProducts();
         Product GetProductById(int id);
         void UpdateProductQuantities(Cart cart);
     }

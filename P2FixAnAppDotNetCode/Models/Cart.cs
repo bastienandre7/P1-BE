@@ -8,7 +8,7 @@ namespace P2FixAnAppDotNetCode.Models
     /// </summary>
     public class Cart : ICart
     {
-        private List<CartLine> _cartLines = new List<CartLine>(); // This will will retain the CartLines, this is the "Cart"
+        private List<CartLine> _cartLines = new List<CartLine>(); 
         /// <summary>
         /// Read-only property for dispaly only
         /// </summary>
@@ -20,9 +20,7 @@ namespace P2FixAnAppDotNetCode.Models
         /// <returns></returns>
         private List<CartLine> GetCartLineList()
         {
-            //return new List<CartLine>(); //Here it used to return a brand new list of empty Cartline
-            return _cartLines; // _cartLines it just returns _cartLines from line 11 that is storing our List of Cartline
-
+            return _cartLines; 
         }
 
         /// <summary>
@@ -132,7 +130,7 @@ namespace P2FixAnAppDotNetCode.Models
         }
     }
 
-    public class CartLine //contains three properties
+    public class CartLine 
     {
         public int OrderLineId { get; set; }
         public Product Product { get; set; }

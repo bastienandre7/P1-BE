@@ -4,7 +4,7 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
 {
     public interface IProductRepository
     {
-        List<Product> GetAllProducts(); //Refactored array to List syntax and added Collections.Generic
+        List<Product> GetAllProducts();
 
         void UpdateProductStocks(int productId, int quantityToRemove);
     }

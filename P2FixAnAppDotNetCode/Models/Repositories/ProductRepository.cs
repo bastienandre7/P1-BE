@@ -8,7 +8,7 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
     /// </summary>
     public class ProductRepository : IProductRepository
     {
-        private static List<Product> _products; //Refactored array to List syntax and added Collections.Generic
+        private static List<Product> _products;
 
         public ProductRepository()
         {
